@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name = "app_name"> Alarme anti vol</string>
+    <string name = "will_be_activ_ated"> Sera activé dans 3 secondes </string>
+    <string name = "error_minimum_digit"> Obligatoire! Longueur minimale de 4 chiffres </string>
+    <string name = "charger_detection"> Détection du chargeur </string>
+    <string name = "proximity_detection"> Détection de proximité </string>
+    <string name = "wron_pin"> Mauvais pin! </string>
+    <string name = "connect_to_charge"> Se connecter au chargeur </string>
+    <string name = "motoion_off"> Arrêt par mouvement </string>
+    <string name = "password_nt_match"> Le mot de passe ne correspond pas </string>
+    <string name = "password_set"> Mot de passe défini </string>
+
+</resources>

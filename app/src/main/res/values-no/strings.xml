@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name = "app_name"> Tyverialarm</string>
+    <string name = "will_be_activ_ated"> Vil bli aktivert om 3 sekunder </string>
+    <string name = "error_minimum_digit"> Påkrevd! Minste lengde på 4 sifre </string>
+    <string name = "charger_detection"> Deteksjon av lader </string>
+    <string name = "proximity_detection"> Nærhetsdeteksjon </string>
+    <string name = "wron_pin"> Feil pin! </string>
+    <string name = "connect_to_charge"> Koble til lader </string>
+    <string name = "motoion_off"> Slå av bevegelse </string>
+    <string name = "password_nt_match"> Passordet samsvarer ikke </string>
+    <string name = "password_set"> Passordsett </string>
+
+
+</resources>

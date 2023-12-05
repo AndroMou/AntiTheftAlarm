@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name = "app_name"> Hırsızlık Önleme Alarmı</string>
+    <string name = "will_be_activ_ated"> 3 Saniyede Etkinleştirilecek </string>
+    <string name = "error_minimum_digit"> Gerekli! Minimum uzunluk 4 basamak </string>
+    <string name = "charger_detection"> Şarj Cihazı Algılama </string>
+    <string name = "proximity_detection"> Yakınlık Algılama </string>
+    <string name = "wron_pin"> Yanlış Pin! </string>
+    <string name = "connect_to_charge"> Şarj Cihazına Bağlayın </string>
+    <string name = "motoion_off"> Hareket Anahtarı Kapalı </string>
+    <string name = "password_nt_match"> Şifre Eşleşmiyor </string>
+    <string name = "password_set"> Parola Kümesi </string>
+
+</resources>

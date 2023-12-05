@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">Anti Theft-Alarm</string>
+    <string name="act_ion_settings">Reset Pin</string>
+    <string name="title_activity_reset_pin">Reset Pin</string>
+    <string name="btn_reset">RESET</string>
+    <string name="will_be_activ_ated">Will Be Activated In 3 Seconds</string>
+    <string name="error_minimum_digit">Required! Minimum length 4 digit</string>
+    <string name="charger_detection">Charger Detection</string>
+    <string name="proximity_detection">Pocket Detection</string>
+    <string name="wron_pin">Wrong Pin!</string>
+    <string name="connect_to_charge">Connect To Charger</string>
+    <string name="charger_mode_on">Charger Protection Mode On</string>
+    <string name="detectn_activate">Motion Detection Mode Activated</string>
+    <string name="motoion_off">Motion Switch Off</string>
+    <string name="password_nt_match">Password Do Not Match</string>
+    <string name="password_set">Password Set</string>
+    <string name="motdete_ction">Motion Detection</string>
+    <string name="setrrr_pinv">SET PIN</string>
+
+
+
+</resources>

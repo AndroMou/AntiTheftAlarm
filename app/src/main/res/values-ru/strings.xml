@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name = "app_name"> Противоугонная сигнализация</string>
+    <string name = "will_be_activ_ated"> Будет активирован через 3 секунд </string>
+    <string name = "error_minimum_digit"> Обязательно! Минимальная длина 4 цифры </string>
+    <string name = "charger_detection"> Обнаружение зарядного устройства </string>
+    <string name = "proximity_detection"> Обнаружение близости </string>
+    <string name = "wron_pin"> Неверный PIN-код! </string>
+    <string name = "connect_to_charge"> Подключиться к зарядному устройству </string>
+    <string name = "motoion_off"> Отключение движения </string>
+    <string name = "password_nt_match"> Пароль не совпадает </string>
+    <string name = "password_set"> Установить пароль </string>
+
+</resources>
