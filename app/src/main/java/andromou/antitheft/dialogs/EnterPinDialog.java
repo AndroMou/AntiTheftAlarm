@@ -1,4 +1,4 @@
-package andromou.antitheftalarm.dialogs;
+package andromou.antitheft.dialogs;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -13,17 +13,18 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 
-import andromou.antitheftalarm.R;
-import andromou.antitheftalarm.background.PhoneStateReceiver;
-import andromou.antitheftalarm.background.PocketService;
-import andromou.antitheftalarm.databinding.DialogEnterPinBinding;
+import andromou.antitheft.R;
+import andromou.antitheft.background.PocketService;
+import andromou.antitheft.databinding.DialogEnterPinBinding;
 
 public class EnterPinDialog implements OnDialogShow{
+    private static final int VOLUME = 2;
+
     @Override
     public void onShow(Context context) {
         DialogEnterPinBinding binding = DialogEnterPinBinding.inflate(((Activity)context).getLayoutInflater());
         SharedPreferences sharedpreferences = context.getSharedPreferences(PASSWORD_KEY_PREFERENCES, Context.MODE_PRIVATE);
-        final String password = sharedpreferences.getString(PASS_WORD, "");
+        final String password = sharedpreferences.getString(PASSWORD, "");
         Dialog mPinDialog = new Dialog(context);
         mPinDialog.setContentView(binding.getRoot());
         mPinDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -33,7 +34,7 @@ public class EnterPinDialog implements OnDialogShow{
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
         final MediaPlayer mPlayer = MediaPlayer.create(context, R.raw.psiren);
         AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, VOLUME, 0);
         mPlayer.start();
         mPlayer.setLooping(true);
         mPinDialog.show();
@@ -49,7 +50,7 @@ public class EnterPinDialog implements OnDialogShow{
 
                } else {
                     binding.etEnterPin.getText().clear();
-                    binding.etEnterPin.setError(context.getString(R.string.wron_pin));
+                    binding.etEnterPin.setError(context.getString(R.string.wrong_pin));
                     binding.etEnterPin.requestFocus();
                 }
             }

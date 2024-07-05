@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="andromou.antitheftalarm.ui.SplashActivity"
+            android:name="andromou.antitheft.ui.SplashActivity"
             android:exported="true"
             android:noHistory="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="andromou.antitheftalarm.ui.MainActivity"
+            android:name="andromou.antitheft.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -37,7 +37,7 @@
             android:value="ca-app-pub-5963817566033623~8791295716" />
 
         <service
-            android:name="andromou.antitheftalarm.background.PocketService"
+            android:name="andromou.antitheft.background.PocketService"
             android:enabled="true"
             android:exported="false" />
         <!--

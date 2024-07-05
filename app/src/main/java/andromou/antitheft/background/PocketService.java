@@ -1,4 +1,4 @@
-package andromou.antitheftalarm.background;
+package andromou.antitheft.background;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -14,27 +14,23 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.IBinder;
+import android.widget.Toast;
 
 
-import andromou.antitheftalarm.ui.MainActivity;
+import andromou.antitheft.ui.MainActivity;
 
 public class PocketService  extends Service implements SensorEventListener {
     private SensorManager mSensorManager;
-    private Sensor mSensor;
     Notification _notification;
     private static final int SENSOR_SENSITIVITY = 4;
-
-
-
     public static boolean isPinCorrect = false;
-    public static int iStatic = 0;
+    public static int numberOfChanges = 0;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        MainActivity.isPhoneRining = true;
-    }
+     }
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -43,7 +39,7 @@ public class PocketService  extends Service implements SensorEventListener {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        iStatic = 0;
+        numberOfChanges = 0;
 
         if (Build.VERSION.SDK_INT >= 26) {
             String NOTIFICATION_CHANNEL_ID = "Permanence";
@@ -65,7 +61,7 @@ public class PocketService  extends Service implements SensorEventListener {
         }
 
         mSensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        Sensor mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
 
         return START_STICKY;
@@ -75,26 +71,17 @@ public class PocketService  extends Service implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType()== Sensor.TYPE_PROXIMITY){
             if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
-                iStatic ++;
-                if (iStatic > 1 && MainActivity.isPhoneRining){
-                    if (event.values[0] >= -SENSOR_SENSITIVITY && event.values[0] <= SENSOR_SENSITIVITY ) {
-                     } else if (MainActivity.isPocketSwitchSet){
-                        MainActivity.isPhoneRining = false;
-                        isPinCorrect = true;
-                        Intent intent = new Intent();
-                        intent.putExtra("pin", true);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        ComponentName cn = new ComponentName(this, MainActivity.class);
-                        intent.setComponent(cn);
-                        getApplicationContext().startActivity(intent);
-
-
-                    }
+                numberOfChanges++;
+                if (numberOfChanges > 1 && !PhoneStateReceiver.isPhoneRinging){
+                    if (event.values[0] > SENSOR_SENSITIVITY ) {
+                            isPinCorrect = true;
+                            Intent intent = new Intent(this, MainActivity.class);
+                            getApplicationContext().startActivity(intent);
+                     }
                 }
             }
-        }
+
 
     }
 

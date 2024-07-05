@@ -1,4 +1,4 @@
-package andromou.antitheftalarm;
+package andromou.antitheft;
 
 import org.junit.Test;
 
